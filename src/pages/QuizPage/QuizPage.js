@@ -4,7 +4,7 @@ import { Container } from "./styled"
 
 export const QuizPage = () => {
 
-    const [step, setStep] = useState(0)
+    const [step, setStep] = useState(3)
     const [name, setName] = useState('')
     const [peso, setPeso] = useState(0)
 
@@ -15,9 +15,14 @@ export const QuizPage = () => {
         setPeso(2)
     }
 
+    const onSubmitf=(e)=>{
+        e.preventDefault()
+        console.log(e.target)
+    }
 
     return (
         <Container>
+            <form onSubmit={onSubmitf}>
             {step === 0 ? 
             <div>
                <p>1 - qual seu nome ? </p>
@@ -32,7 +37,7 @@ export const QuizPage = () => {
             </div> : <></>}
             {step === 2 ? <div>
                <p> 3- Seu ERP possui dificuldades de integração?</p>
-               <p><input onSelect={(e)=>{console.log(e.target.value)}} type="radio" value='3' name='q3'/>Sim </p>
+               <p><input onChange={(e)=>{console.log(e.target.value)}} type="radio" value='3' name='q3'/>Sim </p>
                 <p><input type="radio" value='2' name='q3'/>maio ou menos </p>
                 <p><input type="radio" value='1' name='q3'/>Não </p>
             </div> : <></>}
@@ -64,7 +69,8 @@ export const QuizPage = () => {
                 Pergunta 11
             </div> : <></>}
             <button onClick={()=>{setStep(step-1)}}>Anterior</button>
-            <button onClick={()=>{setStep(step+1)}}>Próximo</button>
+            <button onClick={(e)=>{console.log(e.target.value)}}>Próximo</button>
+            </form>
         </Container>
     )
 }
