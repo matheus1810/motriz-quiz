@@ -65,7 +65,7 @@ width:80vw;
 
 }
 .primeiro-paragrafo{
-    font-family: 'Open Sans';
+    font-family:sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -79,7 +79,7 @@ width:80vw;
 `
 export const TextoContainer=styled.div`
     width:40%;
-    font-family: 'Open Sans';
+    font-family:sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -118,7 +118,7 @@ button{
     height: 36px;
     border:none;
     background: #66CB66;
-    font-family: 'Sora';
+    font-family:sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -142,7 +142,7 @@ p{
     padding-top:50px;
     width: 403px;
     height: 182px;
-    font-family: 'Open Sans';
+    font-family:sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -204,9 +204,9 @@ export const Blogcontent=styled.div`
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    font-family: Arial,sans-serif;
+    font-family:sans-serif;
 p{
-    font-family: Arial, sans-serif;
+    font-family:sans-serif;
     line-height: 24px;
     width: 460px;
     height: 120px;
