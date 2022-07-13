@@ -1,7 +1,17 @@
+import { FaixaDeAviso, PageContainer } from "./styled"
+import logoverde from "../../assets/logoverde.png"
+
 export const YellowPage=()=>{
     return (
-        <div>
-            voce pode ficar atento
-        </div>
+        <PageContainer>
+         <div className="img-container">
+                <img src={logoverde} />
+            </div>
+
+            <FaixaDeAviso>
+                <p className="res">Resultado do teste · Preciso trocar de ERP?</p>
+                <p className="alerta">Fique atento</p>
+            </FaixaDeAviso>
+        </PageContainer>
     )
 }
