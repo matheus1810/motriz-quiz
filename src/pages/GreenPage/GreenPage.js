@@ -94,6 +94,7 @@ export const GreenPage = () => {
                 <div>
                     <img src={logoverde} />
                 </div>
+                
                 <div className="icons">
                     <p>Sankhya.com.br</p>
                     <div>

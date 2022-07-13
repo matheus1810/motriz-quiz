@@ -36,5 +36,23 @@ export const FaixaDeAviso = styled.div`
     font-size: 36px;
     text-align: center;
     color: #2E3C50;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+`
+export const IconContainer=styled.div`
+width:100vw;
+position:absolute;
+.circle{
+    width:45px;
+    height:45px;
+    background-color:#F2CB3E;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    position:absolute;
+    top:85%;
+    left:50%;
 }
 `

@@ -10,7 +10,6 @@ export const PageContainer = styled.div`
 
 `
 export const FaixaDeAviso = styled.div`
-    background-color:lightcyan;
     background-color:rgba(177, 63, 77,0.2);
     display:flex;
     justify-content:center;
@@ -37,5 +36,23 @@ export const FaixaDeAviso = styled.div`
     font-size: 36px;
     text-align: center;
     color: #2E3C50;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+`
+export const IconContainer=styled.div`
+width:100vw;
+position:absolute;
+.circle{
+    width:40px;
+    height:40px;
+    background-color:#B13F4D;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    position:absolute;
+    top:85%;
+    left:50%;
 }
 `
