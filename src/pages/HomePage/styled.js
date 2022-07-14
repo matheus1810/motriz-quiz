@@ -39,6 +39,8 @@ img{
 `
 export const ButtonContainer = styled.button`
 margin-top:40px;
+border:none;
+
 button{
     color:#2E3C50;
     height:40px;

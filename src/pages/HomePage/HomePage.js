@@ -3,8 +3,14 @@ import logoverde from "../../assets/logoverde.png"
 import logo from "../../assets/logo.png"
 import banner from "../../assets/banner.png"
 import data from "../../assets/data.png"
+import { useNavigate } from "react-router-dom"
+
 
 export const HomePage = () => {
+
+    const navigate = useNavigate()
+
+
     return (
         <Container>
             <Banner>
@@ -19,7 +25,7 @@ export const HomePage = () => {
                         decisão inteligente
                     </div>
                     <ButtonContainer>
-                        <button>Faça o teste agora e descubra</button>
+                        <button onClick={() => { navigate('/quiz') }} >Faça o teste agora e descubra</button>
                     </ButtonContainer>
 
                 </TextBanner>
@@ -34,7 +40,7 @@ export const HomePage = () => {
                     e como fazer essa mudança de uma forma prática
                 </div>
                 <ButtonTeste>
-                    <button>  Quero fazer o teste </button>
+                    <button onClick={() => { navigate('/quiz') }}>  Quero fazer o teste </button>
                 </ButtonTeste>
             </QueroFazerOTeste>
 
@@ -77,14 +83,16 @@ export const HomePage = () => {
                         Nós vamos te ensinar o passo a passo para que sua troca de software
                         aconteça de maneira simples
                         e rápida na sua empresa.
-                        </div>
-                    <button className="btn-teste">Faça o teste agora mesmo</button>
+                    </div>
+                    <button
+                        onClick={() => { navigate('/quiz') }}
+                        className="btn-teste">Faça o teste agora mesmo</button>
                 </div>
             </Duvidas>
 
             <Footer>
                 <div>
-                    <img src={logo}/>
+                    <img src={logo} />
                 </div>
             </Footer>
 
