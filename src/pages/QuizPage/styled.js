@@ -11,13 +11,49 @@ align-items: center;
 justify-content:center;
 `
 export const ContentContainer = styled.div`
-width:50vw;
+width:600px;
 margin:0 auto;
 .number{
     color: #66CB66;
     font-size:50px;
     font-weight:600;
 
+}
+.question-box{
+    display:flex;
+    align-items:center;
+    justify-content:start;
+    width:600px;
+    background-color:#525D6E;
+    color:#FFFFFF;
+    margin:20px 0 0 0 ;
+    padding:10px;
+
+    font-family:sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    input{
+        margin-right:10px;
+    }
+}
+.question-box1{
+    display:flex;
+    align-items:center;
+    justify-content:start;
+    width:600px;
+    background-color:#525D6E;
+    color:#FFFFFF;
+    margin:20px 0 0 0 ;
+    padding:10px;
+
+    font-family:sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    input{
+        margin-right:10px;
+    }
 }
 
 `
@@ -27,6 +63,7 @@ grid-template-columns:100px 100px;
 justify-content:space-between;
 align-items:center;
 margin-top:30px;
+width:600px;
 .next{
     width: 132px;
     height: 36px;
@@ -61,7 +98,7 @@ display:flex;
     font-size: 20px;
     line-height: 25px;
     color: #FFFFFF;
-    padding:15px;
+    padding:20px;
 }
 `
 export const NameContainer = styled.div`
@@ -81,5 +118,8 @@ textarea:focus, input:focus, select:focus {
     border-bottom:2px solid #ffffff;
     outline: 0;
 } 
+
+`
+export const ResCard = styled.div`
 
 `

@@ -28,7 +28,6 @@ export const QuizPage = () => {
             setStep(step + 1)
         }
 
-
     }
 
     const previousStep = () => {
@@ -47,6 +46,9 @@ export const QuizPage = () => {
             </LogoContainer>
             <ContentContainer>
                 <form onSubmit={onSubmitf}>
+
+
+
                     {step === 1 ?
                         <NameContainer>
                             <NumberQuestionContainer>
@@ -55,53 +57,164 @@ export const QuizPage = () => {
                             </NumberQuestionContainer>
                             <input name='q1' value={name} onChange={(e) => { setName(e.target.value) }} />
                         </NameContainer> : <></>}
+
+
+
                     {step === 2 ? <div>
-                        <p className="number">02</p>
-                        <p>Quantos funcionários tem sua empresa ?</p>
-                        <p><input type="radio" value='0' name='q1' />100 - 200 </p>
-                        <p><input type="radio" value='0' name='q1' />300 - 400 </p>
-                        <p><input type="radio" value='0' name='q1' />500 - 800 </p>
-                        <p><input type="radio" value='0' name='q1' />900 -1200 </p>
+                        <NumberQuestionContainer>
+                            <p className="number">02</p>
+                            <p className="question">Qual  é o tamanho da sua empresa?</p>
+                        </NumberQuestionContainer>
+                        <p className="question-box1"><input type="radio" value='0' name='q1' />1 a 19 funcionários</p>
+                        <p className="question-box1"><input type="radio" value='0' name='q1' />20 a 99 funcionários </p>
+                        <p className="question-box1"><input type="radio" value='0' name='q1' />100 a 299 funcionários</p>
+                        <p className="question-box1"><input type="radio" value='0' name='q1' />300 a 599 funcionários</p>
+                        <p className="question-box1"><input type="radio" value='0' name='q1' />Acima de 600 funcionários</p>
                     </div> : <></>}
+
+
+
                     {step === 3 ? <div>
-                        <p className="number">03</p>
-                        <p>Seu ERP possui dificuldades de integração?</p>
-                        <p><input onChange={(e) => { console.log(e.target.value) }} type="radio" value='3' name='q3' />Sim </p>
-                        <p><input type="radio" value='2' name='q3' />maio ou menos </p>
-                        <p><input type="radio" value='1' name='q3' />Não </p>
+                        <NumberQuestionContainer>
+                            <p className="number">03</p>
+                            <p className="question">Seu ERP possui dificuldades de integração?</p>
+                        </NumberQuestionContainer>
+                        <p className="question-box">
+                            <input
+                                onChange={(e) => { console.log(e.target.value) }}
+                                type="radio"
+                                value='3'
+                                name='q3'
+                            /> Sim. Apesar de ter um ERP, preciso de outros sistemas para diferentes áreas da empresa,
+                            o que torna os processos mais complexos e pouco fluidos
+                        </p>
+
+                        <p className="question-box">
+                            <input
+                                type="radio"
+                                value='2'
+                                name='q3'
+                            /> Sim, mas da forma que está funcionando me atende bem, não tenho muitos problemas
+                        </p>
+
+                        <p className="question-box">
+                            <input
+                                type="radio"
+                                value='1'
+                                name='q3'
+                            />Não, preciso de poucas integrações e meu ERP se adapta muito bem às minhas necessidades
+                        </p>
+
                     </div> : <></>}
+
+
+
+
                     {step === 4 ? <div>
-                        <p className="number">04</p>
-                        Pergunta 4
+                        <NumberQuestionContainer>
+                            <p className="number">04</p>
+                            <p className="question">Como é o suporte do seu fornecedor?  </p>
+                        </NumberQuestionContainer>
+
+                        <p className="question-box"><input type="radio" value='3' name='q3' />Tenho dificuldades em manter contato com o fornecedor quando preciso de ajuda</p>
+                        <p className="question-box"><input type="radio" value='2' name='q3' />Quando tenho dúvidas ou problemas, ele se dispõe a ajudar</p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' />Mesmo quando não preciso, ele entra em contato para acompanhar o meu processo evolutivo, sugerindo melhorias nos meus processos baseado nas melhores práticas administrativas</p>
+
                     </div> : <></>}
+
+
+
                     {step === 5 ? <div>
-                        <p className="number">05</p>
-                        Pergunta 5
+                        <NumberQuestionContainer>
+                            <p className="number">05</p>
+                            <p className="question">Você é dependente de consultores externos ou os seus colaboradores já conseguem fazer o uso do sistema de forma independente?</p>
+                        </NumberQuestionContainer>
+                        <p className="question-box"><input type="radio" value='3' name='q3' /> Preciso sempre de consultores externos para me auxiliar</p>
+                        <p className="question-box"><input type="radio" value='2' name='q3' /> Normalmente minha equipe consegue se virar bem, de vez em quando precisamos de consultores para resolver problemas muito específicos</p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Tenho um departamento ou profissional responsável, totalmente independente </p>
                     </div> : <></>}
+
+
+
+
                     {step === 6 ? <div>
-                        <p className="number">06</p>
-                        Pergunta 6
+                        <NumberQuestionContainer>
+                            <p className="number">06</p>
+                            <p className="question">Como você descreveria a capacidade do seu ERP na visualização de dados gerenciais para tomada de decisão? </p>
+                        </NumberQuestionContainer>
+
+                        <p className="question-box"><input type="radio" value='3' name='q3' /> O meu sistema apresenta gráficos já oferecidos pelo próprio ERP, com baixa capacidade de personalização. Quando preciso de informações mais completas, preciso extrair planilhas e fazer o processo manualmente.</p>
+                        <p className="question-box"><input type="radio" value='2' name='q3' /> Poderia ser melhor, mas o básico funciona</p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Muito boa, consigo fazer ótimos relatórios através do meu ERP</p>
                     </div> : <></>}
+
+
+
+
                     {step === 7 ? <div>
-                        <p className="number">07</p>
-                        Pergunta 7
+                        <NumberQuestionContainer>
+                            <p className="number">07</p>
+                            <p className="question">Caso sua empresa cresça ainda mais no ano que vem, você acredita que o seu atual ERP consegue acompanhar a sua evolução? </p>
+                        </NumberQuestionContainer>
+
+                        <p className="question-box"><input type="radio" value='3' name='q3' /> Acredito que não, já sinto algumas limitações atualmente</p>
+                        <p className="question-box"><input type="radio" value='2' name='q3' />Não consigo avaliar</p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' />Sim, com certeza meu ERP ainda tem muito a ser explorado, pois utilizo poucos recursos que ele oferece</p>
                     </div> : <></>}
-                    {step === 8 ? <div>
-                        <p className="number">08</p>
-                        Pergunta 8
-                    </div> : <></>}
+
+
+
+
+                    {step === 8 ?
+                        <NameContainer>
+                            <NumberQuestionContainer>
+                                <p className="number">08</p>
+                                <p className="question">Para finalizar preciso de algumas informações sobre você. Em qual empresa você trabalha?   </p>
+                            </NumberQuestionContainer>
+                            <input name='q1' value={name} onChange={(e) => { setName(e.target.value) }} />
+                        </NameContainer> : <></>}
+
+
+
+
                     {step === 9 ? <div>
-                        <p className="number">09</p>
-                        Pergunta 9
+                        <NumberQuestionContainer>
+                            <p className="number">09</p>
+                            <p className="question">Qual cargo você ocupa? </p>
+                        </NumberQuestionContainer>
+
+                        <p className="question-box"><input type="radio" value='3' name='q3' /> Sócio/CEO</p>
+                        <p className="question-box"><input type="radio" value='2' name='q3' /> Proprietário </p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Gerente/coordenador </p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Analista </p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Assistente</p>
+                        <p className="question-box"><input type="radio" value='1' name='q3' /> Outro</p>
                     </div> : <></>}
-                    {step === 10 ? <div>
-                        <p className="number">10</p>
-                        Pergunta 10
-                    </div> : <></>}
-                    {step === 11 ? <div>
-                        <p className="number">11</p>
-                        Pergunta 11
-                    </div> : <></>}
+
+
+
+
+                    {step === 10 ?
+                        <NameContainer>
+                            <NumberQuestionContainer>
+                                <p className="number">10</p>
+                                <p className="question"> Qual é o seu telefone?</p>
+                            </NumberQuestionContainer>
+                            <input name='q1' value={name} onChange={(e) => { setName(e.target.value) }} />
+                        </NameContainer> : <></>}
+
+
+
+                        {step === 11 ?
+                        <NameContainer>
+                            <NumberQuestionContainer>
+                                <p className="number">11</p>
+                                <p className="question">Pronto! Deixe seu e-mail aqui para receber o resultado.</p>
+                            </NumberQuestionContainer>
+                            <input name='q1' value={name} onChange={(e) => { setName(e.target.value) }} />
+                        </NameContainer> : <></>}
+
+
 
                     <ButtonContainer>
                         <button
