@@ -1,6 +1,7 @@
 import { FaixaDeAviso, IconContainer, PageContainer } from "./styled"
 import logoverde from "../../assets/logoverde.png"
 import yellowicon from "../../assets/yellowicon.png"
+import { Footer } from "../../components/Footer/Footer"
 
 export const YellowPage = () => {
     return (
@@ -22,6 +23,8 @@ export const YellowPage = () => {
 
 
             </IconContainer>
+
+         {/*    <Footer/> */}
 
         </PageContainer>
     )

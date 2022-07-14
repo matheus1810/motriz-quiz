@@ -6,7 +6,6 @@ import {
     Container,
     ContainerRes,
     FaixaDeAviso,
-    Footer,
     Icon,
     InputContainer,
     Resposta,
@@ -19,10 +18,8 @@ import reload from "../../assets/reload.png"
 import youtube from "../../assets/youtube.png"
 import thumb from "../../assets/thumb.jpg"
 import digitando from "../../assets/digitando.png"
-import facebook from "../../assets/facebook.png"
-import instagram from "../../assets/instagram.png"
-import linkedin from "../../assets/linkedin.png"
-import twitter from "../../assets/twitter.png"
+import { Footer } from "../../components/Footer/Footer"
+
 
 
 
@@ -90,25 +87,8 @@ export const GreenPage = () => {
                 </Blogcontent>
             </Blog>
 
-            <Footer>
-                <div>
-                    <img src={logoverde} />
-                </div>
-                
-                <div className="icons">
-                    <p>Sankhya.com.br</p>
-                    <div>
-                        <img src={facebook} />
-                    </div>
-                    <div>
-                        <img src={twitter} />
-                    </div>
-                    <div>
-                        <img src={linkedin} />
-                    </div>
-                    <div> <img src={instagram} /></div>
-                </div>
-            </Footer>
+        <Footer/>
+           
 
         </Container>
     )
