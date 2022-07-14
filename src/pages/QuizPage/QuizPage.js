@@ -1,28 +1,27 @@
 import { useState } from "react"
 import { ButtonContainer, Container, ContentContainer, LogoContainer, NameContainer, NumberQuestionContainer } from "./styled"
 import logo from "../../assets/logo.png"
-
+import { useNavigate } from "react-router-dom"
 
 export const QuizPage = () => {
 
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(3)
     const [name, setName] = useState('')
     const [peso, setPeso] = useState(0)
 
-    console.log('peso', peso)
+    const navigate = useNavigate()
 
 
-    const mudaPeso = () => {
-        setPeso(2)
-    }
+
 
     const onSubmitf = (e) => {
         e.preventDefault()
-        console.log(e.target)
     }
 
     const nextStep = () => {
+
         if (step >= 11) {
+            changePage()
             setStep(11)
         } else {
             setStep(step + 1)
@@ -38,6 +37,18 @@ export const QuizPage = () => {
         }
 
     }
+
+    const changePage = () => {
+        if (peso <= 5) {
+            navigate('/verde')
+        } else if (peso >= 6 && peso <= 10) {
+            navigate('/amarelo')
+        } else {
+            navigate('/vermelho')
+        }
+
+    }
+   
 
     return (
         <Container>
@@ -80,17 +91,11 @@ export const QuizPage = () => {
                             <p className="question">Seu ERP possui dificuldades de integração?</p>
                         </NumberQuestionContainer>
                         <p className="question-box">
-                            <input
-                                onChange={(e) => { console.log(e.target.value) }}
-                                type="radio"
-                                value='3'
-                                name='q3'
-                            /> Sim. Apesar de ter um ERP, preciso de outros sistemas para diferentes áreas da empresa,
-                            o que torna os processos mais complexos e pouco fluidos
-                        </p>
+                            <input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='3' name='q3' /> Sim. Apesar de ter um ERP, preciso de outros sistemas para diferentes áreas da empresa,  o que torna os processos mais complexos e pouco fluidos </p>
 
                         <p className="question-box">
                             <input
+                                onChange={(e) => { setPeso(peso + Number(e.target.value)) }}
                                 type="radio"
                                 value='2'
                                 name='q3'
@@ -99,6 +104,7 @@ export const QuizPage = () => {
 
                         <p className="question-box">
                             <input
+                                onChange={(e) => { setPeso(peso + Number(e.target.value)) }}
                                 type="radio"
                                 value='1'
                                 name='q3'
@@ -116,9 +122,18 @@ export const QuizPage = () => {
                             <p className="question">Como é o suporte do seu fornecedor?  </p>
                         </NumberQuestionContainer>
 
-                        <p className="question-box"><input type="radio" value='3' name='q3' />Tenho dificuldades em manter contato com o fornecedor quando preciso de ajuda</p>
-                        <p className="question-box"><input type="radio" value='2' name='q3' />Quando tenho dúvidas ou problemas, ele se dispõe a ajudar</p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' />Mesmo quando não preciso, ele entra em contato para acompanhar o meu processo evolutivo, sugerindo melhorias nos meus processos baseado nas melhores práticas administrativas</p>
+                        <p className="question-box">
+                            <input
+                                onChange={(e) => { setPeso(peso + Number(e.target.value)) }}
+                                type="radio" value='3' name='q4' />Tenho dificuldades em manter contato com o fornecedor quando preciso de ajuda</p>
+                        <p className="question-box">
+                            <input
+                                onChange={(e) => { setPeso(peso + Number(e.target.value)) }}
+                                type="radio" value='2' name='q4' />Quando tenho dúvidas ou problemas, ele se dispõe a ajudar</p>
+                        <p className="question-box">
+                            <input
+                                onChange={(e) => { setPeso(peso + Number(e.target.value)) }}
+                                type="radio" value='1' name='q4' />Mesmo quando não preciso, ele entra em contato para acompanhar o meu processo evolutivo, sugerindo melhorias nos meus processos baseado nas melhores práticas administrativas</p>
 
                     </div> : <></>}
 
@@ -129,9 +144,9 @@ export const QuizPage = () => {
                             <p className="number">05</p>
                             <p className="question">Você é dependente de consultores externos ou os seus colaboradores já conseguem fazer o uso do sistema de forma independente?</p>
                         </NumberQuestionContainer>
-                        <p className="question-box"><input type="radio" value='3' name='q3' /> Preciso sempre de consultores externos para me auxiliar</p>
-                        <p className="question-box"><input type="radio" value='2' name='q3' /> Normalmente minha equipe consegue se virar bem, de vez em quando precisamos de consultores para resolver problemas muito específicos</p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Tenho um departamento ou profissional responsável, totalmente independente </p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='3' name='q5' /> Preciso sempre de consultores externos para me auxiliar</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='2' name='q5' /> Normalmente minha equipe consegue se virar bem, de vez em quando precisamos de consultores para resolver problemas muito específicos</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='1' name='q5' /> Tenho um departamento ou profissional responsável, totalmente independente </p>
                     </div> : <></>}
 
 
@@ -143,9 +158,9 @@ export const QuizPage = () => {
                             <p className="question">Como você descreveria a capacidade do seu ERP na visualização de dados gerenciais para tomada de decisão? </p>
                         </NumberQuestionContainer>
 
-                        <p className="question-box"><input type="radio" value='3' name='q3' /> O meu sistema apresenta gráficos já oferecidos pelo próprio ERP, com baixa capacidade de personalização. Quando preciso de informações mais completas, preciso extrair planilhas e fazer o processo manualmente.</p>
-                        <p className="question-box"><input type="radio" value='2' name='q3' /> Poderia ser melhor, mas o básico funciona</p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Muito boa, consigo fazer ótimos relatórios através do meu ERP</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='3' name='q6' /> O meu sistema apresenta gráficos já oferecidos pelo próprio ERP, com baixa capacidade de personalização. Quando preciso de informações mais completas, preciso extrair planilhas e fazer o processo manualmente.</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='2' name='q6' /> Poderia ser melhor, mas o básico funciona</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='1' name='q6' /> Muito boa, consigo fazer ótimos relatórios através do meu ERP</p>
                     </div> : <></>}
 
 
@@ -157,9 +172,9 @@ export const QuizPage = () => {
                             <p className="question">Caso sua empresa cresça ainda mais no ano que vem, você acredita que o seu atual ERP consegue acompanhar a sua evolução? </p>
                         </NumberQuestionContainer>
 
-                        <p className="question-box"><input type="radio" value='3' name='q3' /> Acredito que não, já sinto algumas limitações atualmente</p>
-                        <p className="question-box"><input type="radio" value='2' name='q3' />Não consigo avaliar</p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' />Sim, com certeza meu ERP ainda tem muito a ser explorado, pois utilizo poucos recursos que ele oferece</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='3' name='q7' /> Acredito que não, já sinto algumas limitações atualmente</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='2' name='q7' />Não consigo avaliar</p>
+                        <p className="question-box"><input onChange={(e) => { setPeso(peso + Number(e.target.value)) }} type="radio" value='1' name='q7' />Sim, com certeza meu ERP ainda tem muito a ser explorado, pois utilizo poucos recursos que ele oferece</p>
                     </div> : <></>}
 
 
@@ -183,12 +198,12 @@ export const QuizPage = () => {
                             <p className="question">Qual cargo você ocupa? </p>
                         </NumberQuestionContainer>
 
-                        <p className="question-box"><input type="radio" value='3' name='q3' /> Sócio/CEO</p>
-                        <p className="question-box"><input type="radio" value='2' name='q3' /> Proprietário </p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Gerente/coordenador </p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Analista </p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Assistente</p>
-                        <p className="question-box"><input type="radio" value='1' name='q3' /> Outro</p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Sócio/CEO</p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Proprietário </p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Gerente/coordenador </p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Analista </p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Assistente</p>
+                        <p className="question-box"><input type="radio" value='0' name='q3' /> Outro</p>
                     </div> : <></>}
 
 
@@ -205,7 +220,7 @@ export const QuizPage = () => {
 
 
 
-                        {step === 11 ?
+                    {step === 11 ?
                         <NameContainer>
                             <NumberQuestionContainer>
                                 <p className="number">11</p>
@@ -222,7 +237,8 @@ export const QuizPage = () => {
                             onClick={() => { previousStep() }}>Voltar</button>
                         <button
                             className="next"
-                            onClick={() => { nextStep() }}>Avançar</button>
+                            onClick={(e) => { nextStep() }}>
+                            {step === 11 ? 'Finalizar teste' : 'Avançar'}</button>
 
                     </ButtonContainer>
                 </form>
